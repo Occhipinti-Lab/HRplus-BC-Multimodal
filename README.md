@@ -37,7 +37,7 @@ The dataset used in this project comes from the **NCBI Gene Expression Omnibus (
 
 ---
 
-## 🚀 How to Use
+## How to Use
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
