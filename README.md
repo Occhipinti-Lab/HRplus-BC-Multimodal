@@ -41,4 +41,4 @@ The dataset used in this project comes from the **NCBI Gene Expression Omnibus (
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   cd HRplus-BC-Multimodal
