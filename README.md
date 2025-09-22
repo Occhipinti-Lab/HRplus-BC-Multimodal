@@ -36,7 +36,7 @@ project/
 │
 └── data/ 
 ├── raw/
-└── processed/
+└── processed/ produced by running 01_data_acquisition.ipynb
 ```
 
 **Notes:**
