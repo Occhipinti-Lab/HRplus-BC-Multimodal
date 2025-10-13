@@ -18,7 +18,11 @@ cobra>=0.29.0
 # Machine learning
 scikit-learn>=1.3.0
 xgboost>=1.7.6
-tensorflow>=2.15.0  
+tensorflow>=2.15.0
+shap
+
+# Jupyter
+ipykernel
 
 # Optional: module introspection
 # inspect is part of Python standard library, no install needed
