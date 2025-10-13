@@ -1,0 +1,113 @@
+# -------------------------------
+# Python cache / build artifacts
+# -------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.dll
+*.o
+*.a
+
+# -------------------------------
+# Virtual environments
+# -------------------------------
+venv/
+.env/
+.venv/
+env/
+ENV/
+pip-wheel-metadata/
+pip-log.txt
+
+# -------------------------------
+# Jupyter notebooks
+# -------------------------------
+.ipynb_checkpoints
+*.ipynb_convert
+*.nbconvert.ipynb
+
+# -------------------------------
+# Logs and runtime files
+# -------------------------------
+*.log
+logs/
+*.out
+*.err
+*.tmp
+*.bak
+
+# -------------------------------
+# Build / packaging
+# -------------------------------
+build/
+dist/
+develop-eggs/
+.eggs/
+*.egg-info/
+*.egg
+MANIFEST
+*.manifest
+*.spec
+
+# -------------------------------
+# Data, models, and outputs
+# -------------------------------
+data/
+dataset/
+output/
+results/
+checkpoints/
+models/
+runs/
+weights/
+*.h5
+*.hdf5
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.joblib
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.npy
+*.npz
+*.parquet
+*.pickle
+
+# -------------------------------
+# IDE / Editor specific
+# -------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# -------------------------------
+# System files
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------------
+# TensorBoard / WandB / ML logs
+# -------------------------------
+wandb/
+tensorboard/
+tb_logs/
+lightning_logs/
+mlruns/
+
+# -------------------------------
+# Temporary or test files
+# -------------------------------
+tmp/
+temp/
+test_output/
+tests/__pycache__/
