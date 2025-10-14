@@ -21,22 +21,25 @@ This project provides a reproducible pipeline for prediction of breast cancer tr
 project/
 │── README.md
 │── requirements.txt
+│── .gitignore
 │
 │── notebooks/ 
-│ ├── 01_data_acquisition.ipynb
-│ ├── 02_flux_generation_scFBA.ipynb
-│ ├── 03_experiment_gene_only.ipynb
-│ ├── 04_experiment_flux_only.ipynb
-│ └── 05_experiment_multimodal.ipynb
+│ ├── 0_data_acquistion.ipynb
+│ ├── 1_preprocessing_genes.ipynb
+│ ├── 2_generate_flux.ipynb
+│ └── 3_ml_modality_evaluator.ipynb
 │
-│── results/ 
-│ ├── metrics
-│ ├── calibration_curves
-│ └── feature_importance
+|
+│── models/model.xml (scFBA XML model) 
+|
+│── scripts
+│ ├── pipeline_scFBApy.py
+│ └── utils_scFBApy.py
 │
-└── data/ 
-├── raw/
-└── processed/ produced by running 01_data_acquisition.ipynb
+└── dataset/
+│ ├── csv
+│ └── h5ad
+
 ```
 
 **Notes:**
@@ -47,29 +50,25 @@ project/
 
 ---
 
-## Experiments
+## Notebooks
 
-### 01 – Data Acquisition
+### 0_data_acquistion.ipynb
 - Loads raw scRNA-seq data from GEO.  
 - Prepares cell-level metadata, patient IDs, and response labels.  
-- Includes initial quality control and preprocessed matrices.
 
-### 02 – Flux Generation (scFBApy)
+### 1_preprocessing_genes.ipynb
+
+### 2_generate_flux.ipynb
 - Generates cell-level fluxes from scRNA-seq using `scFBApy`.    
 - Outputs structured flux matrices for machine learning.
 
-### 03 – Transcriptomics
+### 3_ml_modality_evaluator.ipynb 
 - Uses gene expression features for ML modeling.  
-- Preprocessing: normalization, HVG selection, PCA.  
-- Models: Random Forest, XGBoost, ANN.  
-- Includes SHAP-based explainability.
-
-### 04 – Fluxomics 
-- Uses fluxomic features for ML modeling.  
-- Evaluates predictive potential independently of transcriptomics.
-
-### 05 – Multimodal Integration
-- Combines transcriptomics and fluxomics into a unified dataset.  
+- Uses fluxomic features for ML modeling.
+- Combines transcriptomics and fluxomics into a unified dataset (based on highly variance gene and fluxomic features) 
+- Models: Logistict Regression, Random Forest, XGBoost, ANN.
+- Optuna for hyperparameter tuning
+- SHAP contribution plots for interpretability in multimodal mode
 - Compares predictive performance of:
   1. Transcriptomics
   2. Fluxomics
@@ -101,8 +100,6 @@ The primary dataset comes from the **NCBI Gene Expression Omnibus (GEO):**
     pip install -r requirements.txt
 ---
 3. **Run notebooks in order:**
-
-    a. Start with 01_data_acquisition.ipynb to prepare datasets.
-
-    b. Then run flux generation, single-modality experiments, and multimodal integration.
+    a. Start with 0_data_acquisition.ipynb to prepare datasets.
+    b. Then run 1_preprocessing_genes.ipynb, 2_generate_flux.ipynb abd 3_ml_modality_evaluator.ipynb.
 ---
