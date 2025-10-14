@@ -59,6 +59,10 @@ project/
 - Prepares cell-level metadata, patient IDs, and response labels.  
 
 ### 1_preprocessing_genes.ipynb
+- Performs quality control (QC): filters low-quality cells, removes outliers, and normalizes expression counts.
+- Conducts Differential Expression (DE) analysis between responder and non-responder groups.
+- Generates visualization plots including violin plots and gene expression distributions for QC validation.
+- Saves the cleaned and preprocessed data for downstream flux generation.
 
 ### 2_generate_flux.ipynb
 - Generates cell-level fluxes from scRNA-seq using `scFBApy`.    
@@ -102,6 +106,9 @@ The primary dataset comes from the **NCBI Gene Expression Omnibus (GEO):**
     pip install -r requirements.txt
 ---
 3. **Run notebooks in order:**
-    a. Start with 0_data_acquisition.ipynb to prepare datasets.
-    b. Then run 1_preprocessing_genes.ipynb, 2_generate_flux.ipynb abd 3_ml_modality_evaluator.ipynb.
+Execute the notebooks in the following order to reproduce the full pipeline:
+1. **`00_data_acquisition.ipynb`** → Download and organize the raw datasets.  
+2. **`01_preprocessing_genes.ipynb`** → Perform QC, outlier removal, normalization, and differential expression (DE) analysis on transcriptomic data.  
+3. **`02_generate_flux.ipynb`** → Infer single-cell metabolic fluxes using *scFBApy*.  
+4. **`03_ml_modality_evaluator.ipynb`** → Train, tune (Optuna), and evaluate machine-learning models across transcriptomic, fluxomic, and multimodal datasets.
 ---
