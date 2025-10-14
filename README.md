@@ -107,8 +107,8 @@ The primary dataset comes from the **NCBI Gene Expression Omnibus (GEO):**
 ---
 3. **Run notebooks in order:**
 Execute the notebooks in the following order to reproduce the full pipeline:
-1. **`00_data_acquisition.ipynb`** → Download and organize the raw datasets.  
-2. **`01_preprocessing_genes.ipynb`** → Perform QC, outlier removal, normalization, and differential expression (DE) analysis on transcriptomic data.  
-3. **`02_generate_flux.ipynb`** → Infer single-cell metabolic fluxes using *scFBApy*.  
-4. **`03_ml_modality_evaluator.ipynb`** → Train, tune (*Optuna*), and evaluate machine-learning models across transcriptomic, fluxomic, and multimodal datasets.
+- **`00_data_acquisition.ipynb`** → Download and organize the raw datasets.  
+- **`01_preprocessing_genes.ipynb`** → Perform QC, outlier removal, normalization, and differential expression (DE) analysis on transcriptomic data.  
+- **`02_generate_flux.ipynb`** → Infer single-cell metabolic fluxes using *scFBApy*.  
+- **`03_ml_modality_evaluator.ipynb`** → Train, tune (*Optuna*), and evaluate machine-learning models across transcriptomic, fluxomic, and multimodal datasets.
 ---
