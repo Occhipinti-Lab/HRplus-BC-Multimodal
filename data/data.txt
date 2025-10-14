@@ -1,6 +1,0 @@
-Raw data source for this project:
-
-GEO Accession: GSE300475
-NCBI GEO Link: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE300475
-
-This file serves as a reference for the original raw dataset used in the project.
