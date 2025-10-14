@@ -21,6 +21,9 @@ xgboost>=1.7.6
 tensorflow>=2.15.0
 shap
 
+# Hyper-Parameter Tunning
+optuna
+
 # Jupyter
 ipykernel
 
