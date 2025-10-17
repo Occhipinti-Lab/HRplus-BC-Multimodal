@@ -53,46 +53,6 @@ project/
 
 ---
 
-## Notebooks
-
-### 0_data_acquistion.ipynb
-- Loads raw scRNA-seq data from GEO.  
-- Prepares cell-level metadata, patient IDs, and response labels.  
-
-### 1_preprocessing_genes.ipynb
-- Performs quality control (QC): filters low-quality cells, removes outliers, and normalizes expression counts.
-- Conducts Differential Expression (DE) analysis between responder and non-responder groups.
-- Generates visualization plots including violin plots and gene expression distributions for QC validation.
-- Saves the cleaned and preprocessed data for downstream flux generation.
-
-### 2_generate_flux.ipynb
-- Generates cell-level fluxes from scRNA-seq using `scFBApy`.    
-- Outputs structured flux matrices for machine learning.
-
-### 3_experiment_1.ipynb — Transcriptomic Features Only
-- Uses **gene expression features** (HVGs) for ML modeling.  
-- Models implemented: Logistic Regression, Random Forest, XGBoost, and ANN.  
-- Hyperparameter tuning performed using **Optuna**.  
-- Includes **SHAP contribution plots** for model interpretability.  
-- Evaluates predictive performance based on transcriptomic data only.
-
-### 3_experiment_2.ipynb — Fluxomic Features Only
-- Uses **fluxomic features** (metabolic reaction–based features).  
-- Applies the same modeling and tuning pipeline as in Experiment 1.  
-- Evaluates how well flux-based data alone can predict treatment response.  
-- Includes feature importance visualization and SHAP explanations.
-
-### 3_experiment_3.ipynb — Multimodal Integration (Transcriptomics and Fluxomics)
-- Integrates **transcriptomic** and **fluxomic** features into a unified dataset  
-  (based on top highly variable genes and corresponding fluxomic features).  
-- Implements the same ML pipeline and models (Logistic Regression, RF, XGBoost, ANN).  
-- Performs **Optuna** hyperparameter optimization and **SHAP** interpretation in multimodal mode.  
-- Visualizes contribution plots comparing top features across both modalities.  
-
-📘 *Each notebook is self-contained and can be executed independently for modality-specific or multimodal analysis.*
-
----
-
 ## Data Source
 
 The primary dataset comes from the **NCBI Gene Expression Omnibus (GEO):**  
