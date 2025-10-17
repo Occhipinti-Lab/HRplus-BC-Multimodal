@@ -45,7 +45,7 @@ project/
 ```
 
 **Notes:**
-1. Notebook names are descriptive and numbered to indicate workflow order.  
+1. `notebooks/` contains Jupyter notebooks with descriptive, numbered filenames that reflect the logical order of the analysis workflow.
 2. `dataset/` contains all datasets used or generated throughout experiments for full reproducibility.
 3. `models/` contains cobra model of scFBApy.
 4. `scripts/` contains scFBApy scripts.
