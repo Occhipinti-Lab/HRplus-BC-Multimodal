@@ -9,7 +9,7 @@ The data are derived from the original raw dataset hosted on **NCBI GEO** and in
 
 - **GEO Accession:** [GSE300475](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE300475)  
 - This dataset serves as the reference for the **original raw biological data** used in this project.
-
+- Preprocessed data is available at: https://figshare.com/articles/dataset/Multiscale_Flux_Balance_Analysis_Bridging_Multi-Omics_and_Single-Cell_Data_for_Therapy_Response_Prediction_in_Hormone_Receptor-Positive_Breast_Cancer/30385879
 ---
 
 ## 📁 Directory Structure
