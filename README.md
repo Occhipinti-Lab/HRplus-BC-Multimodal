@@ -63,7 +63,7 @@ The primary dataset comes from the **NCBI Gene Expression Omnibus (GEO):**
 - Patient response status (Responder vs Non-responder) was mapped using the associated publication:  
   🔗 [npj | Breast Cancer – Dynamic single-cell systemic immune responses in immunotherapy-treated early-stage HR+ breast cancer patients](https://www.nature.com/articles/s41523-025-00776-1).  
 - Processed into feature matrices for downstream analysis in this project.
-
+- Preprocessed data is available at: https://figshare.com/articles/dataset/Multiscale_Flux_Balance_Analysis_Bridging_Multi-Omics_and_Single-Cell_Data_for_Therapy_Response_Prediction_in_Hormone_Receptor-Positive_Breast_Cancer/30385879
 ---
 
 ## How to Use
