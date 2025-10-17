@@ -27,12 +27,14 @@ project/
 │ ├── 0_data_acquistion.ipynb
 │ ├── 1_preprocessing_genes.ipynb
 │ ├── 2_generate_flux.ipynb
-│ └── 3_ml_modality_evaluator.ipynb
+│ ├── 3_experiment_1.ipynb
+│ ├── 3_experiment_2.ipynb
+│ └── 3_experiment_3.ipynb
 │
 |
 │── models/model.xml (scFBA XML model) 
 |
-│── scripts
+│── scripts (scFBA python scripts)
 │ ├── pipeline_scFBApy.py
 │ └── utils_scFBApy.py
 │
@@ -44,11 +46,10 @@ project/
 
 **Notes:**
 1. Notebook names are descriptive and numbered to indicate workflow order.  
-2. `results/` stores experiment outputs, including csv for all modality and models.
-3. `dataset/` contains all datasets used or generated throughout experiments for full reproducibility.
-4. `models/` contains cobra model of scFBApy.
-5. `scripts/` contains scFBApy scripts.
-6. `requirements.txt` lists all Python dependencies for reproducibility.
+2. `dataset/` contains all datasets used or generated throughout experiments for full reproducibility.
+3. `models/` contains cobra model of scFBApy.
+4. `scripts/` contains scFBApy scripts.
+5. `requirements.txt` lists all Python dependencies for reproducibility.
 
 ---
 
@@ -68,17 +69,27 @@ project/
 - Generates cell-level fluxes from scRNA-seq using `scFBApy`.    
 - Outputs structured flux matrices for machine learning.
 
-### 3_ml_modality_evaluator.ipynb 
-- Uses gene expression features for ML modeling.  
-- Uses fluxomic features for ML modeling.
-- Combines transcriptomics and fluxomics into a unified dataset (based on highly variance gene and fluxomic features) 
-- Models: Logistict Regression, Random Forest, XGBoost, ANN.
-- Optuna for hyperparameter tuning
-- SHAP contribution plots for interpretability in multimodal mode
-- Compares predictive performance of:
-  1. Transcriptomics
-  2. Fluxomics
-  3. Multimodal concatenated features
+### 3_experiment_1.ipynb — Transcriptomic Features Only
+- Uses **gene expression features** (HVGs) for ML modeling.  
+- Models implemented: Logistic Regression, Random Forest, XGBoost, and ANN.  
+- Hyperparameter tuning performed using **Optuna**.  
+- Includes **SHAP contribution plots** for model interpretability.  
+- Evaluates predictive performance based on transcriptomic data only.
+
+### 3_experiment_2.ipynb — Fluxomic Features Only
+- Uses **fluxomic features** (metabolic reaction–based features).  
+- Applies the same modeling and tuning pipeline as in Experiment 1.  
+- Evaluates how well flux-based data alone can predict treatment response.  
+- Includes feature importance visualization and SHAP explanations.
+
+### 3_experiment_3.ipynb — Multimodal Integration (Transcriptomics and Fluxomics)
+- Integrates **transcriptomic** and **fluxomic** features into a unified dataset  
+  (based on top highly variable genes and corresponding fluxomic features).  
+- Implements the same ML pipeline and models (Logistic Regression, RF, XGBoost, ANN).  
+- Performs **Optuna** hyperparameter optimization and **SHAP** interpretation in multimodal mode.  
+- Visualizes contribution plots comparing top features across both modalities.  
+
+📘 *Each notebook is self-contained and can be executed independently for modality-specific or multimodal analysis.*
 
 ---
 
@@ -93,6 +104,7 @@ The primary dataset comes from the **NCBI Gene Expression Omnibus (GEO):**
   🔗 [npj | Breast Cancer – Dynamic single-cell systemic immune responses in immunotherapy-treated early-stage HR+ breast cancer patients](https://www.nature.com/articles/s41523-025-00776-1).  
 - Processed into feature matrices for downstream analysis in this project.
 
+---
 
 ## How to Use
 
@@ -110,5 +122,7 @@ Execute the notebooks in the following order to reproduce the full pipeline:
 - **`00_data_acquisition.ipynb`** → Download and organize the raw datasets.  
 - **`01_preprocessing_genes.ipynb`** → Perform QC, outlier removal, normalization, and differential expression (DE) analysis on transcriptomic data.  
 - **`02_generate_flux.ipynb`** → Infer single-cell metabolic fluxes using *scFBApy*.  
-- **`03_ml_modality_evaluator.ipynb`** → Train, tune (*Optuna*), and evaluate machine-learning models across transcriptomic, fluxomic, and multimodal datasets.
+- **`3_experiment_1.ipynb`** → Train, tune (*Optuna*), and evaluate machine-learning models using **transcriptomic (gene expression)** features only, including **SHAP contribution plots** for top genes.
+- **`3_experiment_2.ipynb`** → Train, tune (*Optuna*), and evaluate models using **fluxomic (metabolic reaction)** features only, with **feature importance** and **SHAP interpretability** visualizations.
+- **`3_experiment_3.ipynb`** → Train, tune (*Optuna*), and evaluate **multimodal models** integrating **transcriptomic + fluxomic** features, and visualize **SHAP contribution plots** comparing top features across both modalities.
 ---
