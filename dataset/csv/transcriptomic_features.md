@@ -1,6 +1,6 @@
 # 📊 External Dataset
 
-The transcriptomics_features.csv is hosted on **Figshare**.
+The transcriptomic_features.csv is hosted on **Figshare**.
 
 You can access and download the dataset directly at the following link:
 
